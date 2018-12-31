@@ -22,10 +22,10 @@ Else {
 
 
 
-$PipLibraries = 'arcade', 'astroid', 'bokeh', 'boto', 'celery', 'cryptography', 'django', 'jinja2', 'jupyter', 'mssql-cli', 'numpy', 'pandas', 'paramiko', 'psycopg2', 'pyodbc', 'pytest', 'scrapy', 'sqlalchemy'
+$PipLibraries = 'arcade', 'astroid', 'bokeh', 'boto', 'celery', 'cryptography', 'django', 'jinja2', 'jupyter', 'mssql-cli', 'numpy', 'pandas', 'paramiko', 'psycopg2', 'pyodbc', 'pytest', 'requests', 'scrapy', 'sqlalchemy'
 
 
-If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\python3" {
+If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\python3") {
 
     ForEach ($PipLibrary in $PipLibraries)
         {
