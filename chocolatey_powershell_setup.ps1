@@ -32,3 +32,15 @@ If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\python3") {
             pip3 install $PipLibrary
         }
 }
+
+
+$VsCodeExtensions = 'hookyqr.beautify', 'ms-vscode.csharp', 'rokoroku.vscode-theme-darcula', 'msjsdiag.debugger-for-chrome', 'peterjausovec.vscode-docker', 'donjayamanne.githistory', 'ms-vscode.go', 'wholroyd.jinja', 'mechatroner.rainbow-csv', 'rebornix.ruby', 'ms-mssql.mssql', 'dotjoshjohnson.xml', 'redhat.vscode-yaml'
+
+If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\vscode") {
+
+    ForEach ($Extension in $VsCodeExtensions)
+        {
+            code --install-extension $Extension
+        }
+
+}
