@@ -1,4 +1,4 @@
-$Packages = '7zip', 'awscli', 'awstools.powershell', 'docker', 'docker-compose', 'firefox', 'git', 'googlechrome', 'googledrive', 'jenkins', 'notepadplusplus', 'putty.install', 'python3', 'ruby', 'slack', 'spotify', 'vscode', 'windirstat', 'winscp'
+$Packages = '7zip', 'awscli', 'awstools.powershell', 'docker', 'docker-compose', 'docker-desktop', 'firefox', 'git', 'googlechrome', 'googledrive', 'jenkins', 'notepadplusplus', 'putty.install', 'python3', 'ruby', 'slack', 'spotify', 'vscode', 'windirstat', 'winscp'
 
 
 If (Test-Path -Path "$env:ProgramData\Chocolatey") {
@@ -42,5 +42,15 @@ If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\vscode") {
         {
             code --install-extension $Extension
         }
+}
 
+
+$DockerImages = 'mysql', 'postgres', 'ubuntu', 'redis', 'elasticsearch', 'celery', 'mongo', 'consul', 'rabbitmq', 'ruby', 'jenkins/jenkins', 'kibana', 'grafana/grafana', 'amazonlinux', 'python'
+
+If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\docker") {
+
+    ForEach ($Image in $DockerImages)
+        {
+            docker image pull $Image
+        }
 }
