@@ -47,7 +47,7 @@ If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\vscode") {
 
 $DockerImages = 'mysql', 'postgres', 'ubuntu', 'redis', 'elasticsearch', 'celery', 'mongo', 'consul', 'rabbitmq', 'ruby', 'jenkins/jenkins', 'kibana', 'grafana/grafana', 'amazonlinux', 'python'
 
-If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\docker") {
+If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\docker-desktop") {
 
     ForEach ($Image in $DockerImages)
         {
