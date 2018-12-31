@@ -7,10 +7,11 @@ If (Test-Path -Path "$env:ProgramData\Chocolatey") {
         {
             choco install $PackageName -y
         }
+}
 
 Else {
     #Install Chocolatey itself
-
+    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
     #Install Chocolatey Packages
     ForEach ($PackageName in $Packages)
