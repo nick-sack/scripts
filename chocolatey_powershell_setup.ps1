@@ -1,4 +1,4 @@
-$Packages = '7zip', 'awscli', 'awstools.powershell', 'docker', 'docker-compose', 'docker-desktop', 'firefox', 'git', 'googlechrome', 'googledrive', 'jenkins', 'notepadplusplus', 'putty.install', 'python3', 'ruby', 'slack', 'spotify', 'vscode', 'windirstat', 'winscp'
+$Packages = '7zip', 'awscli', 'awstools.powershell', 'docker', 'docker-compose', 'docker-desktop', 'firefox', 'git', 'googlechrome', 'googledrive', 'jenkins', 'notepadplusplus', 'putty.install', 'python3', 'ruby', 'slack', 'spotify', 'terraform', 'vscode', 'windirstat', 'winscp'
 
 
 If (Test-Path -Path "$env:ProgramData\Chocolatey") {
