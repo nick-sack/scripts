@@ -34,7 +34,7 @@ If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\python3") {
 }
 
 
-$VsCodeExtensions = 'hookyqr.beautify', 'ms-vscode.csharp', 'rokoroku.vscode-theme-darcula', 'msjsdiag.debugger-for-chrome', 'peterjausovec.vscode-docker', 'donjayamanne.githistory', 'ms-vscode.go', 'wholroyd.jinja', 'mechatroner.rainbow-csv', 'rebornix.ruby', 'ms-mssql.mssql', 'dotjoshjohnson.xml', 'redhat.vscode-yaml'
+$VsCodeExtensions = 'hookyqr.beautify', 'ms-vscode.csharp', 'rokoroku.vscode-theme-darcula', 'msjsdiag.debugger-for-chrome', 'peterjausovec.vscode-docker', 'donjayamanne.githistory', 'ms-vscode.go', 'wholroyd.jinja', 'mechatroner.rainbow-csv', 'rebornix.ruby', 'ms-mssql.mssql', 'dotjoshjohnson.xml', 'redhat.vscode-yaml', 'ms-vscode.powershell'
 
 If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\vscode") {
 
@@ -54,3 +54,17 @@ If (Test-Path -Path "C:\ProgramData\Chocolatey\lib\docker-desktop") {
             docker image pull $Image
         }
 }
+
+
+#Set the taskbar icons to be small
+Set-ItemProperty -path HKCU:\Software\Microsoft\Windows\Shell\Bags\1\Desktop -name IconSize -value 20
+
+#explorer.exe restarts automatically after stopping
+Stop-Process -name explorer
+
+#Set folder view options
+Set-ItemProperty -path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -name Hidden -value 1
+Set-ItemProperty -path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -name HideFileExt -value 0
+Set-ItemProperty -path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -name ShowSuperHidden -value 1
+
+Stop-Process -processname explorer
